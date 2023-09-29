@@ -1,0 +1,19 @@
+{
+  "props": [
+    {
+      "name": "Footer Text",
+      "type": "color",
+      "value": "#5A335D",
+      "category": "color",
+      "meta": {
+        "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
+        "id": "Kjd6kp-ELMIS"
+      }
+    }
+  ],
+  "global": {
+    "meta": {
+      "source": "plasmic.app"
+    }
+  }
+}

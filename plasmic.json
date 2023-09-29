@@ -1,0 +1,464 @@
+{
+  "platform": "nextjs",
+  "code": {
+    "lang": "ts",
+    "scheme": "blackbox",
+    "reactRuntime": "classic"
+  },
+  "style": {
+    "scheme": "css-modules",
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+  },
+  "images": {
+    "scheme": "public-files",
+    "publicDir": "../public",
+    "publicUrlPrefix": "/"
+  },
+  "tokens": {
+    "scheme": "theo",
+    "tokensFilePath": "plasmic-tokens.theo.json"
+  },
+  "srcDir": "components",
+  "defaultPlasmicDir": "./plasmic",
+  "projects": [
+    {
+      "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
+      "projectApiToken": "XwlGfnzf5pSaCEWMq8JJqFZnNroKSO3Q2HDfENrcFust1uRlfrY8FOq1tdd5yTatY1gE19rHbcKGuSsBdsA",
+      "projectName": "Its_A-Lisa Site",
+      "version": "latest",
+      "cssFilePath": "plasmic/its_a_lisa_site/plasmic_its_a_lisa_site.module.css",
+      "components": [
+        {
+          "id": "qAL5iQ50tsT6",
+          "name": "Homepage",
+          "type": "managed",
+          "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
+          "renderModuleFilePath": "plasmic/its_a_lisa_site/PlasmicHomepage.tsx",
+          "importSpec": {
+            "modulePath": "../pages/index.tsx"
+          },
+          "cssFilePath": "plasmic/its_a_lisa_site/PlasmicHomepage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/"
+        },
+        {
+          "id": "cAOyLxN62SOb",
+          "name": "ContactButton",
+          "type": "managed",
+          "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
+          "renderModuleFilePath": "plasmic/its_a_lisa_site/PlasmicContactButton.tsx",
+          "importSpec": {
+            "modulePath": "ContactButton.tsx"
+          },
+          "cssFilePath": "plasmic/its_a_lisa_site/PlasmicContactButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
+        },
+        {
+          "id": "YZ0omOIxTFEt",
+          "name": "AboutMe",
+          "type": "managed",
+          "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
+          "renderModuleFilePath": "plasmic/its_a_lisa_site/PlasmicAboutMe.tsx",
+          "importSpec": {
+            "modulePath": "../pages/about-me.tsx"
+          },
+          "cssFilePath": "plasmic/its_a_lisa_site/PlasmicAboutMe.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/about-me"
+        },
+        {
+          "id": "HBjN2PI6FOY_",
+          "name": "Header",
+          "type": "managed",
+          "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
+          "renderModuleFilePath": "plasmic/its_a_lisa_site/PlasmicHeader.tsx",
+          "importSpec": {
+            "modulePath": "Header.tsx"
+          },
+          "cssFilePath": "plasmic/its_a_lisa_site/PlasmicHeader.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "Z-CrKblPINiy",
+          "name": "Footer",
+          "type": "managed",
+          "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
+          "renderModuleFilePath": "plasmic/its_a_lisa_site/PlasmicFooter.tsx",
+          "importSpec": {
+            "modulePath": "Footer.tsx"
+          },
+          "cssFilePath": "plasmic/its_a_lisa_site/PlasmicFooter.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "Y7HT2qlGG-VY",
+          "name": "Blog",
+          "type": "managed",
+          "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
+          "renderModuleFilePath": "plasmic/its_a_lisa_site/PlasmicBlog.tsx",
+          "importSpec": {
+            "modulePath": "../pages/blog.tsx"
+          },
+          "cssFilePath": "plasmic/its_a_lisa_site/PlasmicBlog.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/blog"
+        },
+        {
+          "id": "jPkpcXf9p4tS",
+          "name": "Projects",
+          "type": "managed",
+          "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
+          "renderModuleFilePath": "plasmic/its_a_lisa_site/PlasmicProjects.tsx",
+          "importSpec": {
+            "modulePath": "../pages/projects.tsx"
+          },
+          "cssFilePath": "plasmic/its_a_lisa_site/PlasmicProjects.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/projects"
+        },
+        {
+          "id": "ID-MRVooUSRM",
+          "name": "Resources",
+          "type": "managed",
+          "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
+          "renderModuleFilePath": "plasmic/its_a_lisa_site/PlasmicResources.tsx",
+          "importSpec": {
+            "modulePath": "../pages/resources.tsx"
+          },
+          "cssFilePath": "plasmic/its_a_lisa_site/PlasmicResources.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/resources"
+        },
+        {
+          "id": "FM4bZBdv5rQ6",
+          "name": "ContactMe",
+          "type": "managed",
+          "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
+          "renderModuleFilePath": "plasmic/its_a_lisa_site/PlasmicContactMe.tsx",
+          "importSpec": {
+            "modulePath": "../pages/contact-me.tsx"
+          },
+          "cssFilePath": "plasmic/its_a_lisa_site/PlasmicContactMe.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/contact-me"
+        }
+      ],
+      "icons": [
+        {
+          "id": "3_yHCFLLgNEg",
+          "name": "IconIcon",
+          "moduleFilePath": "plasmic/its_a_lisa_site/icons/PlasmicIcon__Icon.tsx"
+        },
+        {
+          "id": "aEApkZ9LPN9G",
+          "name": "Icon2Icon",
+          "moduleFilePath": "plasmic/its_a_lisa_site/icons/PlasmicIcon__Icon2.tsx"
+        },
+        {
+          "id": "bmI5bMpk7f1L",
+          "name": "Icon3Icon",
+          "moduleFilePath": "plasmic/its_a_lisa_site/icons/PlasmicIcon__Icon3.tsx"
+        },
+        {
+          "id": "O8iZdDZj2IKb",
+          "name": "ItemLinkIcon",
+          "moduleFilePath": "plasmic/its_a_lisa_site/icons/PlasmicIcon__ItemLink.tsx"
+        },
+        {
+          "id": "FLu0O6AIBKVq",
+          "name": "ItemLink2Icon",
+          "moduleFilePath": "plasmic/its_a_lisa_site/icons/PlasmicIcon__ItemLink2.tsx"
+        },
+        {
+          "id": "M7-pYRQDzYBy",
+          "name": "Icon4Icon",
+          "moduleFilePath": "plasmic/its_a_lisa_site/icons/PlasmicIcon__Icon4.tsx"
+        },
+        {
+          "id": "Mp81dLSdsp_D",
+          "name": "Icon6Icon",
+          "moduleFilePath": "plasmic/its_a_lisa_site/icons/PlasmicIcon__Icon6.tsx"
+        },
+        {
+          "id": "Fv5K9UTuEa-F",
+          "name": "Icon8Icon",
+          "moduleFilePath": "plasmic/its_a_lisa_site/icons/PlasmicIcon__Icon8.tsx"
+        },
+        {
+          "id": "iXMBCYD1tp0N",
+          "name": "Icon9Icon",
+          "moduleFilePath": "plasmic/its_a_lisa_site/icons/PlasmicIcon__Icon9.tsx"
+        },
+        {
+          "id": "huLMvL5wIXy1",
+          "name": "ChecksvgIcon",
+          "moduleFilePath": "plasmic/its_a_lisa_site/icons/PlasmicIcon__Checksvg.tsx"
+        },
+        {
+          "id": "FYLMO-tZsz_5",
+          "name": "Icon38Icon",
+          "moduleFilePath": "plasmic/its_a_lisa_site/icons/PlasmicIcon__Icon38.tsx"
+        },
+        {
+          "id": "7HuHl2O-klQp",
+          "name": "Icon21Icon",
+          "moduleFilePath": "plasmic/its_a_lisa_site/icons/PlasmicIcon__Icon21.tsx"
+        },
+        {
+          "id": "0R2qJtpePk1T",
+          "name": "Icon22Icon",
+          "moduleFilePath": "plasmic/its_a_lisa_site/icons/PlasmicIcon__Icon22.tsx"
+        },
+        {
+          "id": "6FuUhrFEU7RO",
+          "name": "Icon23Icon",
+          "moduleFilePath": "plasmic/its_a_lisa_site/icons/PlasmicIcon__Icon23.tsx"
+        }
+      ],
+      "images": [
+        {
+          "id": "VT3gx9Dn6N3Z",
+          "name": "Section",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/section.jpg"
+        },
+        {
+          "id": "fKt9ql9lzdB8",
+          "name": "Section 2",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/section2.jpg"
+        },
+        {
+          "id": "-s3B_X700ohZ",
+          "name": "div.map-image",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/divmapImage.png"
+        },
+        {
+          "id": "SXdpaIgtpvZE",
+          "name": "ab-img.png",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/abImgpng.png"
+        },
+        {
+          "id": "W8W92T7_X9Zs",
+          "name": "g1.jpg",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/g1Jpg.jpg"
+        },
+        {
+          "id": "MXLalRb-4oRe",
+          "name": "g2.png",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/g2Png.png"
+        },
+        {
+          "id": "NxsMBCLi3TXq",
+          "name": "g3.png",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/g3Png.png"
+        },
+        {
+          "id": "xynVVcG2Cdqy",
+          "name": "g5.png",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/g5Png.png"
+        },
+        {
+          "id": "lZpZ1MGMI7Bp",
+          "name": "g4.png",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/g4Png.png"
+        },
+        {
+          "id": "V2luxcYvvlgZ",
+          "name": "g6.png",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/g6Png.png"
+        },
+        {
+          "id": "4EnUaWNnxrxc",
+          "name": "g8.png",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/g8Png.png"
+        },
+        {
+          "id": "1EMAksATap5X",
+          "name": "g9.png",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/g9Png.png"
+        },
+        {
+          "id": "ZTkPS3gxy2sn",
+          "name": "g7.jpg",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/g7Jpg.jpg"
+        },
+        {
+          "id": "v_95WVKhVZBu",
+          "name": "hero.png",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/heropng.png"
+        },
+        {
+          "id": "d3G5dM-UjArP",
+          "name": "b-3.png",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/b3Png.png"
+        },
+        {
+          "id": "b3-nALinREDV",
+          "name": "b-2.png",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/b2Png.png"
+        },
+        {
+          "id": "jz-ecfRgVBxD",
+          "name": "b-1.png",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/b1Png.png"
+        },
+        {
+          "id": "nTFBGY5QSrrz",
+          "name": "c-1.png",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/c1Png.png"
+        },
+        {
+          "id": "5vquDRWBzWAQ",
+          "name": "p-2.png",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/p2Png.png"
+        },
+        {
+          "id": "eBnD4wcds2Pj",
+          "name": "Item → Link 3",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/itemLink3.svg"
+        },
+        {
+          "id": "WlutP9gnxFL2",
+          "name": "Item → Link 4",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/itemLink4.svg"
+        },
+        {
+          "id": "9FuH1oiCV87Z",
+          "name": "Icon 5",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/icon5.svg"
+        },
+        {
+          "id": "uPmyzgs9mmH6",
+          "name": "Icon 7",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/icon7.svg"
+        },
+        {
+          "id": "Cu0KFzuHwJnr",
+          "name": "SVG",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/svg.svg"
+        },
+        {
+          "id": "bHXclzoJXIuM",
+          "name": "SVG 2",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/svg2.svg"
+        },
+        {
+          "id": "CiE1ybctlF_K",
+          "name": "SVG 3",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/svg3.svg"
+        },
+        {
+          "id": "b_--Ran96H2K",
+          "name": "SVG 4",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/svg4.svg"
+        },
+        {
+          "id": "0mT7PNjoo5kj",
+          "name": "Icon 10",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/icon10.svg"
+        },
+        {
+          "id": "51yKzwP7zmJ_",
+          "name": "Icon 11",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/icon11.svg"
+        },
+        {
+          "id": "FYgL5FPrifHg",
+          "name": "Icon 12",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/icon12.svg"
+        },
+        {
+          "id": "Cc_5Qy3vIIOu",
+          "name": "Icon 13",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/icon13.svg"
+        },
+        {
+          "id": "bjms0lTVAtDH",
+          "name": "Icon 14",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/icon14.svg"
+        },
+        {
+          "id": "hSURkiZVdyzS",
+          "name": "Icon 15",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/icon15.svg"
+        },
+        {
+          "id": "qotNZMQ-ruVE",
+          "name": "Icon 16",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/icon16.svg"
+        },
+        {
+          "id": "icwchJp-v62e",
+          "name": "Icon 17",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/icon17.svg"
+        },
+        {
+          "id": "mSqwCtasOZx7",
+          "name": "Icon 18",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/icon18.svg"
+        },
+        {
+          "id": "mw7N9VhWk1EX",
+          "name": "Icon 19",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/icon19.svg"
+        },
+        {
+          "id": "97a9bkSNqMIF",
+          "name": "Icon 20",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/icon20.svg"
+        },
+        {
+          "id": "ljOHV6vxBkNg",
+          "name": "image",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/image.svg"
+        },
+        {
+          "id": "cAn2qEWh7HXF",
+          "name": "juegodynamics_very_detailed_fantasy_map_surface_of_a_gas_giant__fe8ce9ce-b690-40f6-8dbc-2b5248121379.png",
+          "filePath": "../public/plasmic/its_a_lisa_site/images/juegodynamicsVeryDetailedFantasyMapSurfaceOfAGasGiantFe8Ce9CeB69040F68Dbc2B5248121379Png.png"
+        }
+      ],
+      "indirect": false,
+      "globalContextsFilePath": "",
+      "codeComponents": [
+        {
+          "id": "R6FO_f3PJPsT",
+          "name": "PlasmicHead",
+          "displayName": "hostless-plasmic-head",
+          "componentImportPath": "@plasmicapp/react-web"
+        },
+        {
+          "id": "QMPJym19dfEZ",
+          "name": "Fetcher",
+          "displayName": "plasmic-data-source-fetcher",
+          "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        }
+      ]
+    }
+  ],
+  "globalVariants": {
+    "variantGroups": [
+      {
+        "id": "NIKtHGeB1opg",
+        "name": "Screen",
+        "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
+        "contextFilePath": "plasmic/its_a_lisa_site/PlasmicGlobalVariant__Screen.tsx"
+      }
+    ]
+  },
+  "wrapPagesWithGlobalContexts": true,
+  "nextjsConfig": {
+    "pagesDir": "../pages"
+  },
+  "cliVersion": "0.1.309",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.309/dist/plasmic.schema.json"
+}

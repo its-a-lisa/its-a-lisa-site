@@ -511,8 +511,12 @@ function PlasmicHomepage__RenderFunc(props: {
                   sty.text__gwDtr
                 )}
               >
-                {"Enter some text"}
+                {"This site was made possible by James"}
               </div>
+              <svg
+                className={classNames(projectcss.all, sty.svg__sjs6O)}
+                role={"img"}
+              />
             </p.Stack>
             <div className={classNames(projectcss.all, sty.freeBox__uCaoi)}>
               <p.Stack

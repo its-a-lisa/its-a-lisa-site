@@ -162,7 +162,7 @@
 .svg__maTCf {
   position: relative;
   object-fit: cover;
-  width: 1em;
+  width: auto;
   height: 1em;
 }
 .text__lnLeW {
@@ -183,7 +183,7 @@
 .svg__tO4Da {
   position: relative;
   object-fit: cover;
-  width: 1em;
+  width: auto;
   height: 1em;
 }
 .about:global(.__wab_instance) {
@@ -194,7 +194,7 @@
 .svg___07Br {
   position: relative;
   object-fit: cover;
-  width: 1em;
+  width: auto;
   height: 1em;
 }
 .text__bCd0C {
@@ -215,7 +215,7 @@
 .svg___6Gbg {
   position: relative;
   object-fit: cover;
-  width: 1em;
+  width: auto;
   height: 1em;
 }
 .blog:global(.__wab_instance) {
@@ -226,7 +226,7 @@
 .svg__ybCnu {
   position: relative;
   object-fit: cover;
-  width: 1em;
+  width: auto;
   height: 1em;
 }
 .text__zrZWq {
@@ -247,7 +247,7 @@
 .svg___2DGq {
   position: relative;
   object-fit: cover;
-  width: 1em;
+  width: auto;
   height: 1em;
 }
 .projects:global(.__wab_instance) {
@@ -258,7 +258,7 @@
 .svg__fVOq1 {
   position: relative;
   object-fit: cover;
-  width: 1em;
+  width: auto;
   height: 1em;
 }
 .text__jumV {
@@ -279,7 +279,7 @@
 .svg__sxONg {
   position: relative;
   object-fit: cover;
-  width: 1em;
+  width: auto;
   height: 1em;
 }
 .resources:global(.__wab_instance) {
@@ -290,7 +290,7 @@
 .svg__hF2R {
   position: relative;
   object-fit: cover;
-  width: 1em;
+  width: auto;
   height: 1em;
 }
 .text__ve629 {
@@ -311,7 +311,7 @@
 .svg__utEaX {
   position: relative;
   object-fit: cover;
-  width: 1em;
+  width: auto;
   height: 1em;
 }
 .freeBox__genul {
@@ -346,7 +346,7 @@
 .svg__y4NNg {
   position: relative;
   object-fit: cover;
-  width: 1em;
+  width: auto;
   height: 1em;
 }
 .text__x8M3B {
@@ -367,6 +367,6 @@
 .svg__tZjj2 {
   position: relative;
   object-fit: cover;
-  width: 1em;
+  width: auto;
   height: 1em;
 }

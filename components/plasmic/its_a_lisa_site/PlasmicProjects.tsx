@@ -63,6 +63,8 @@ export type PlasmicProjects__OverridesType = {
 
 export interface DefaultProjectsProps {}
 
+const $$ = {};
+
 function useNextRouter() {
   try {
     return useRouter();

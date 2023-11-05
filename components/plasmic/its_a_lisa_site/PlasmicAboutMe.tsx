@@ -63,6 +63,8 @@ export type PlasmicAboutMe__OverridesType = {
 
 export interface DefaultAboutMeProps {}
 
+const $$ = {};
+
 function useNextRouter() {
   try {
     return useRouter();

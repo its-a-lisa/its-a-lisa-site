@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "public-files",
@@ -24,7 +24,7 @@
     {
       "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
       "projectApiToken": "XwlGfnzf5pSaCEWMq8JJqFZnNroKSO3Q2HDfENrcFust1uRlfrY8FOq1tdd5yTatY1gE19rHbcKGuSsBdsA",
-      "projectName": "Its_A-Lisa Site",
+      "projectName": "its_a-lisa site",
       "version": "latest",
       "cssFilePath": "plasmic/its_a_lisa_site/plasmic_its_a_lisa_site.module.css",
       "components": [
@@ -442,7 +442,9 @@
           "displayName": "plasmic-data-source-fetcher",
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
-      ]
+      ],
+      "splitsProviderFilePath": "",
+      "customFunctions": []
     }
   ],
   "globalVariants": {
@@ -459,6 +461,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.309",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.309/dist/plasmic.schema.json"
+  "cliVersion": "0.1.322",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.322/dist/plasmic.schema.json"
 }

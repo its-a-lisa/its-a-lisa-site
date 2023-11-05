@@ -77,6 +77,8 @@ export type PlasmicHomepage__OverridesType = {
 
 export interface DefaultHomepageProps {}
 
+const $$ = {};
+
 function useNextRouter() {
   try {
     return useRouter();
@@ -502,6 +504,15 @@ function PlasmicHomepage__RenderFunc(props: {
                   {"Get to know me"}
                 </div>
               </ContactButton>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__gwDtr
+                )}
+              >
+                {"Enter some text"}
+              </div>
             </p.Stack>
             <div className={classNames(projectcss.all, sty.freeBox__uCaoi)}>
               <p.Stack

@@ -63,6 +63,8 @@ export type PlasmicBlog__OverridesType = {
 
 export interface DefaultBlogProps {}
 
+const $$ = {};
+
 function useNextRouter() {
   try {
     return useRouter();

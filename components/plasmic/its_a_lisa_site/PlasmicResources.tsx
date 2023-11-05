@@ -63,6 +63,8 @@ export type PlasmicResources__OverridesType = {
 
 export interface DefaultResourcesProps {}
 
+const $$ = {};
+
 function useNextRouter() {
   try {
     return useRouter();

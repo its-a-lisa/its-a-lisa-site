@@ -63,6 +63,8 @@ export type PlasmicContactMe__OverridesType = {
 
 export interface DefaultContactMeProps {}
 
+const $$ = {};
+
 function useNextRouter() {
   try {
     return useRouter();

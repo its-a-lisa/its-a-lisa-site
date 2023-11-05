@@ -148,6 +148,8 @@ export interface DefaultContactButtonProps extends pp.BaseButtonProps {
   >;
 }
 
+const $$ = {};
+
 function useNextRouter() {
   try {
     return useRouter();

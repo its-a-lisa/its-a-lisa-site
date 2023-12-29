@@ -39,6 +39,8 @@ import {
 import Header from "../../Header"; // plasmic-import: HBjN2PI6FOY_/component
 import Footer from "../../Footer"; // plasmic-import: Z-CrKblPINiy/component
 
+import { ThemeValue, useTheme } from "./PlasmicGlobalVariant__Theme"; // plasmic-import: 0mo4e2K7LvGd/globalVariant
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_its_a_lisa_site.module.css"; // plasmic-import: tt6TsnGtggzVZCRW2FQ8Vk/projectcss
@@ -58,6 +60,8 @@ export const PlasmicProjects__ArgProps = new Array<ArgPropType>();
 export type PlasmicProjects__OverridesType = {
   root?: p.Flex<"div">;
   header?: p.Flex<typeof Header>;
+  h1?: p.Flex<"h1">;
+  text?: p.Flex<"div">;
   footer?: p.Flex<typeof Footer>;
 };
 
@@ -94,6 +98,10 @@ function PlasmicProjects__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
+  const globalVariants = ensureGlobalVariants({
+    theme: useTheme()
+  });
+
   return (
     <React.Fragment>
       <Head></Head>
@@ -116,13 +124,31 @@ function PlasmicProjects__RenderFunc(props: {
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
-            sty.root
+            sty.root,
+            {
+              [projectcss.global_theme_dark]: hasVariant(
+                globalVariants,
+                "theme",
+                "dark"
+              ),
+              [sty.rootglobal_theme_dark]: hasVariant(
+                globalVariants,
+                "theme",
+                "dark"
+              )
+            }
           )}
         >
           <Header
             data-plasmic-name={"header"}
             data-plasmic-override={overrides.header}
-            className={classNames("__wab_instance", sty.header)}
+            className={classNames("__wab_instance", sty.header, {
+              [sty.headerglobal_theme_dark]: hasVariant(
+                globalVariants,
+                "theme",
+                "dark"
+              )
+            })}
           />
 
           <p.Stack
@@ -135,11 +161,14 @@ function PlasmicProjects__RenderFunc(props: {
               hasGap={true}
               className={classNames(projectcss.all, sty.freeBox__cMeHg)}
             >
-              <div
+              <h1
+                data-plasmic-name={"h1"}
+                data-plasmic-override={overrides.h1}
                 className={classNames(
                   projectcss.all,
+                  projectcss.h1,
                   projectcss.__wab_text,
-                  sty.text__x82Hw
+                  sty.h1
                 )}
               >
                 <React.Fragment>
@@ -150,12 +179,14 @@ function PlasmicProjects__RenderFunc(props: {
                     {"about me"}
                   </span>
                 </React.Fragment>
-              </div>
+              </h1>
               <div
+                data-plasmic-name={"text"}
+                data-plasmic-override={overrides.text}
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__ufEj5
+                  sty.text
                 )}
               >
                 {"Under Construction"}
@@ -174,8 +205,10 @@ function PlasmicProjects__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "footer"],
+  root: ["root", "header", "h1", "text", "footer"],
   header: ["header"],
+  h1: ["h1"],
+  text: ["text"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -184,6 +217,8 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   header: typeof Header;
+  h1: "h1";
+  text: "div";
   footer: typeof Footer;
 };
 
@@ -221,7 +256,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       () =>
         deriveRenderOpts(props, {
           name: nodeName,
-          descendantNames: [...PlasmicDescendants[nodeName]],
+          descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicProjects__ArgProps,
           internalVariantPropNames: PlasmicProjects__VariantProps
         }),
@@ -248,6 +283,8 @@ export const PlasmicProjects = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
+    h1: makeNodeComponent("h1"),
+    text: makeNodeComponent("text"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicProjects

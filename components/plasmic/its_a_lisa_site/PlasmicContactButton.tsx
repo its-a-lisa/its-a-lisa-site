@@ -38,6 +38,8 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 
+import { ThemeValue, useTheme } from "./PlasmicGlobalVariant__Theme"; // plasmic-import: 0mo4e2K7LvGd/globalVariant
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_its_a_lisa_site.module.css"; // plasmic-import: tt6TsnGtggzVZCRW2FQ8Vk/projectcss
@@ -235,6 +237,10 @@ function PlasmicContactButton__RenderFunc(props: {
     focusVisibleWithin_root: isRootFocusVisibleWithin
   };
 
+  const globalVariants = ensureGlobalVariants({
+    theme: useTheme()
+  });
+
   return (
     <p.Stack
       as={"button"}
@@ -252,6 +258,11 @@ function PlasmicContactButton__RenderFunc(props: {
         projectcss.plasmic_tokens,
         sty.root,
         {
+          [projectcss.global_theme_dark]: hasVariant(
+            globalVariants,
+            "theme",
+            "dark"
+          ),
           [sty.root___focusVisibleWithin]: triggers.focusVisibleWithin_root,
           [sty.rootcolor_blue]: hasVariant($state, "color", "blue"),
           [sty.rootcolor_clear]: hasVariant($state, "color", "clear"),
@@ -694,7 +705,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       () =>
         deriveRenderOpts(props, {
           name: nodeName,
-          descendantNames: [...PlasmicDescendants[nodeName]],
+          descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicContactButton__ArgProps,
           internalVariantPropNames: PlasmicContactButton__VariantProps
         }),

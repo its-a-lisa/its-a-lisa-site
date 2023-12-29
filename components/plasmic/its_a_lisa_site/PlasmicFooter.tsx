@@ -38,6 +38,7 @@ import {
 } from "@plasmicapp/react-web";
 import ContactButton from "../../ContactButton"; // plasmic-import: cAOyLxN62SOb/component
 
+import { ThemeValue, useTheme } from "./PlasmicGlobalVariant__Theme"; // plasmic-import: 0mo4e2K7LvGd/globalVariant
 import { useScreenVariants as useScreenVariantsniKtHGeB1Opg } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: NIKtHGeB1opg/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -66,6 +67,7 @@ export type PlasmicFooter__OverridesType = {
   footer?: p.Flex<"div">;
   columns?: p.Flex<"div">;
   img?: p.Flex<typeof p.PlasmicImg>;
+  h6?: p.Flex<"h6">;
 };
 
 export interface DefaultFooterProps {
@@ -104,6 +106,7 @@ function PlasmicFooter__RenderFunc(props: {
   const currentUser = p.useCurrentUser?.() || {};
 
   const globalVariants = ensureGlobalVariants({
+    theme: useTheme(),
     screen: useScreenVariantsniKtHGeB1Opg()
   });
 
@@ -121,7 +124,19 @@ function PlasmicFooter__RenderFunc(props: {
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
-        sty.footer
+        sty.footer,
+        {
+          [projectcss.global_theme_dark]: hasVariant(
+            globalVariants,
+            "theme",
+            "dark"
+          ),
+          [sty.footerglobal_theme_dark]: hasVariant(
+            globalVariants,
+            "theme",
+            "dark"
+          )
+        }
       )}
     >
       <div className={classNames(projectcss.all, sty.freeBox__d4Gw2)}>
@@ -169,7 +184,7 @@ function PlasmicFooter__RenderFunc(props: {
                     sty.text___3KkLx
                   )}
                 >
-                  {"Connect with us"}
+                  {"Connect with me"}
                 </div>
                 <p.Stack
                   as={"div"}
@@ -200,15 +215,18 @@ function PlasmicFooter__RenderFunc(props: {
               hasGap={true}
               className={classNames(projectcss.all, sty.freeBox__d9DIh)}
             >
-              <div
+              <h6
+                data-plasmic-name={"h6"}
+                data-plasmic-override={overrides.h6}
                 className={classNames(
                   projectcss.all,
+                  projectcss.h6,
                   projectcss.__wab_text,
-                  sty.text__aufwO
+                  sty.h6
                 )}
               >
                 {"ABOUT"}
-              </div>
+              </h6>
               <ContactButton
                 className={classNames(
                   "__wab_instance",
@@ -562,9 +580,10 @@ function PlasmicFooter__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  footer: ["footer", "columns", "img"],
-  columns: ["columns", "img"],
-  img: ["img"]
+  footer: ["footer", "columns", "img", "h6"],
+  columns: ["columns", "img", "h6"],
+  img: ["img"],
+  h6: ["h6"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -573,6 +592,7 @@ type NodeDefaultElementType = {
   footer: "div";
   columns: "div";
   img: typeof p.PlasmicImg;
+  h6: "h6";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -609,7 +629,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       () =>
         deriveRenderOpts(props, {
           name: nodeName,
-          descendantNames: [...PlasmicDescendants[nodeName]],
+          descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicFooter__ArgProps,
           internalVariantPropNames: PlasmicFooter__VariantProps
         }),
@@ -637,6 +657,7 @@ export const PlasmicFooter = Object.assign(
     // Helper components rendering sub-elements
     columns: makeNodeComponent("columns"),
     img: makeNodeComponent("img"),
+    h6: makeNodeComponent("h6"),
 
     // Metadata about props expected for PlasmicFooter
     internalVariantProps: PlasmicFooter__VariantProps,

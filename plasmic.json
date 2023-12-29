@@ -57,20 +57,6 @@
           "plumeType": "button"
         },
         {
-          "id": "YZ0omOIxTFEt",
-          "name": "AboutMe",
-          "type": "managed",
-          "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
-          "renderModuleFilePath": "plasmic/its_a_lisa_site/PlasmicAboutMe.tsx",
-          "importSpec": {
-            "modulePath": "../pages/about-me.tsx"
-          },
-          "cssFilePath": "plasmic/its_a_lisa_site/PlasmicAboutMe.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/about-me"
-        },
-        {
           "id": "HBjN2PI6FOY_",
           "name": "Header",
           "type": "managed",
@@ -97,20 +83,6 @@
           "componentType": "component"
         },
         {
-          "id": "Y7HT2qlGG-VY",
-          "name": "Blog",
-          "type": "managed",
-          "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
-          "renderModuleFilePath": "plasmic/its_a_lisa_site/PlasmicBlog.tsx",
-          "importSpec": {
-            "modulePath": "../pages/blog.tsx"
-          },
-          "cssFilePath": "plasmic/its_a_lisa_site/PlasmicBlog.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/blog"
-        },
-        {
           "id": "jPkpcXf9p4tS",
           "name": "Projects",
           "type": "managed",
@@ -125,32 +97,18 @@
           "path": "/projects"
         },
         {
-          "id": "ID-MRVooUSRM",
-          "name": "Resources",
+          "id": "08tV0C4XRgYQ",
+          "name": "Switch",
           "type": "managed",
           "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
-          "renderModuleFilePath": "plasmic/its_a_lisa_site/PlasmicResources.tsx",
+          "renderModuleFilePath": "plasmic/its_a_lisa_site/PlasmicSwitch.tsx",
           "importSpec": {
-            "modulePath": "../pages/resources.tsx"
+            "modulePath": "Switch.tsx"
           },
-          "cssFilePath": "plasmic/its_a_lisa_site/PlasmicResources.module.css",
+          "cssFilePath": "plasmic/its_a_lisa_site/PlasmicSwitch.module.css",
           "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/resources"
-        },
-        {
-          "id": "FM4bZBdv5rQ6",
-          "name": "ContactMe",
-          "type": "managed",
-          "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
-          "renderModuleFilePath": "plasmic/its_a_lisa_site/PlasmicContactMe.tsx",
-          "importSpec": {
-            "modulePath": "../pages/contact-me.tsx"
-          },
-          "cssFilePath": "plasmic/its_a_lisa_site/PlasmicContactMe.module.css",
-          "scheme": "blackbox",
-          "componentType": "page",
-          "path": "/contact-me"
+          "componentType": "component",
+          "plumeType": "switch"
         }
       ],
       "icons": [
@@ -454,6 +412,12 @@
         "name": "Screen",
         "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
         "contextFilePath": "plasmic/its_a_lisa_site/PlasmicGlobalVariant__Screen.tsx"
+      },
+      {
+        "id": "0mo4e2K7LvGd",
+        "name": "Theme",
+        "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
+        "contextFilePath": "plasmic/its_a_lisa_site/PlasmicGlobalVariant__Theme.tsx"
       }
     ]
   },
@@ -461,6 +425,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.322",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.322/dist/plasmic.schema.json"
+  "cliVersion": "0.1.325",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.325/dist/plasmic.schema.json"
 }

@@ -36,8 +36,11 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import Header from "../../Header"; // plasmic-import: HBjN2PI6FOY_/component
 import ContactButton from "../../ContactButton"; // plasmic-import: cAOyLxN62SOb/component
+import Footer from "../../Footer"; // plasmic-import: Z-CrKblPINiy/component
 
+import { ThemeValue, useTheme } from "./PlasmicGlobalVariant__Theme"; // plasmic-import: 0mo4e2K7LvGd/globalVariant
 import { useScreenVariants as useScreenVariantsniKtHGeB1Opg } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: NIKtHGeB1opg/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -47,9 +50,6 @@ import sty from "./PlasmicHomepage.module.css"; // plasmic-import: qAL5iQ50tsT6/
 
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: huLMvL5wIXy1/icon
 import Icon38Icon from "./icons/PlasmicIcon__Icon38"; // plasmic-import: FYLMO-tZsz_5/icon
-import Icon21Icon from "./icons/PlasmicIcon__Icon21"; // plasmic-import: 7HuHl2O-klQp/icon
-import Icon22Icon from "./icons/PlasmicIcon__Icon22"; // plasmic-import: 0R2qJtpePk1T/icon
-import Icon23Icon from "./icons/PlasmicIcon__Icon23"; // plasmic-import: 6FuUhrFEU7RO/icon
 
 createPlasmicElementProxy;
 
@@ -64,15 +64,13 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
-  home?: p.Flex<typeof ContactButton>;
-  about?: p.Flex<typeof ContactButton>;
-  blog?: p.Flex<typeof ContactButton>;
-  projectsResearch?: p.Flex<typeof ContactButton>;
-  resources?: p.Flex<typeof ContactButton>;
-  button?: p.Flex<"button">;
+  header?: p.Flex<typeof Header>;
+  h1?: p.Flex<"h1">;
+  h3?: p.Flex<"h3">;
   ul?: p.Flex<"ul">;
   li?: p.Flex<"li">;
-  columns?: p.Flex<"div">;
+  contactButton?: p.Flex<typeof ContactButton>;
+  footer?: p.Flex<typeof Footer>;
 };
 
 export interface DefaultHomepageProps {}
@@ -109,6 +107,7 @@ function PlasmicHomepage__RenderFunc(props: {
   const currentUser = p.useCurrentUser?.() || {};
 
   const globalVariants = ensureGlobalVariants({
+    theme: useTheme(),
     screen: useScreenVariantsniKtHGeB1Opg()
   });
 
@@ -134,238 +133,44 @@ function PlasmicHomepage__RenderFunc(props: {
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
-            sty.root
+            sty.root,
+            {
+              [projectcss.global_theme_dark]: hasVariant(
+                globalVariants,
+                "theme",
+                "dark"
+              ),
+              [sty.rootglobal_theme_dark]: hasVariant(
+                globalVariants,
+                "theme",
+                "dark"
+              )
+            }
           )}
         >
           <div className={classNames(projectcss.all, sty.freeBox__nmlBj)}>
             <p.Stack
               as={"div"}
               hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__yZa0B)}
+              className={classNames(projectcss.all, sty.freeBox__yZa0B, {
+                [sty.freeBoxglobal_theme_dark__yZa0B6Jr2E]: hasVariant(
+                  globalVariants,
+                  "theme",
+                  "dark"
+                )
+              })}
             >
-              <p.Stack
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__nZwIy)}
-              >
-                <p.PlasmicImg
-                  alt={""}
-                  className={classNames(sty.img__sZkKr)}
-                  displayHeight={"auto"}
-                  displayMaxHeight={"none"}
-                  displayMaxWidth={"none"}
-                  displayMinHeight={"0"}
-                  displayMinWidth={"0"}
-                  displayWidth={"40px"}
-                  src={{
-                    src: "/plasmic/its_a_lisa_site/images/image.svg",
-                    fullWidth: 150,
-                    fullHeight: 150,
-                    aspectRatio: 1
-                  }}
-                />
-
-                <p.Stack
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox___62SR)}
-                >
-                  <ContactButton
-                    data-plasmic-name={"home"}
-                    data-plasmic-override={overrides.home}
-                    className={classNames("__wab_instance", sty.home)}
-                    color={"clear"}
-                    endIcon={
-                      <Icon38Icon
-                        className={classNames(projectcss.all, sty.svg__eM7Q2)}
-                        role={"img"}
-                      />
-                    }
-                    startIcon={
-                      <ChecksvgIcon
-                        className={classNames(projectcss.all, sty.svg__r7YYb)}
-                        role={"img"}
-                      />
-                    }
-                    submitsForm={true}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__ylkyl
-                      )}
-                    >
-                      {"Home"}
-                    </div>
-                  </ContactButton>
-                  <ContactButton
-                    data-plasmic-name={"about"}
-                    data-plasmic-override={overrides.about}
-                    className={classNames("__wab_instance", sty.about)}
-                    color={"clear"}
-                    endIcon={
-                      <Icon38Icon
-                        className={classNames(projectcss.all, sty.svg__jh8Dn)}
-                        role={"img"}
-                      />
-                    }
-                    startIcon={
-                      <ChecksvgIcon
-                        className={classNames(projectcss.all, sty.svg__mJx3T)}
-                        role={"img"}
-                      />
-                    }
-                    submitsForm={true}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__jgpMt
-                      )}
-                    >
-                      {"About"}
-                    </div>
-                  </ContactButton>
-                  <ContactButton
-                    data-plasmic-name={"blog"}
-                    data-plasmic-override={overrides.blog}
-                    className={classNames("__wab_instance", sty.blog)}
-                    color={"clear"}
-                    endIcon={
-                      <Icon38Icon
-                        className={classNames(projectcss.all, sty.svg__gEz6U)}
-                        role={"img"}
-                      />
-                    }
-                    startIcon={
-                      <ChecksvgIcon
-                        className={classNames(projectcss.all, sty.svg__rumkZ)}
-                        role={"img"}
-                      />
-                    }
-                    submitsForm={true}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__rVwft
-                      )}
-                    >
-                      {"Blog"}
-                    </div>
-                  </ContactButton>
-                  <ContactButton
-                    data-plasmic-name={"projectsResearch"}
-                    data-plasmic-override={overrides.projectsResearch}
-                    className={classNames(
-                      "__wab_instance",
-                      sty.projectsResearch
-                    )}
-                    color={"clear"}
-                    endIcon={
-                      <Icon38Icon
-                        className={classNames(projectcss.all, sty.svg__ohLgz)}
-                        role={"img"}
-                      />
-                    }
-                    startIcon={
-                      <ChecksvgIcon
-                        className={classNames(projectcss.all, sty.svg__xcgxs)}
-                        role={"img"}
-                      />
-                    }
-                    submitsForm={true}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__za9En
-                      )}
-                    >
-                      {"Projects/Research"}
-                    </div>
-                  </ContactButton>
-                  <ContactButton
-                    data-plasmic-name={"resources"}
-                    data-plasmic-override={overrides.resources}
-                    className={classNames("__wab_instance", sty.resources)}
-                    color={"clear"}
-                    endIcon={
-                      <Icon38Icon
-                        className={classNames(projectcss.all, sty.svg__iYo1F)}
-                        role={"img"}
-                      />
-                    }
-                    startIcon={
-                      <ChecksvgIcon
-                        className={classNames(projectcss.all, sty.svg__nNrG)}
-                        role={"img"}
-                      />
-                    }
-                    submitsForm={true}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__dOiS
-                      )}
-                    >
-                      {"Resources"}
-                    </div>
-                  </ContactButton>
-                </p.Stack>
-                <div className={classNames(projectcss.all, sty.freeBox__rZoyM)}>
-                  {false ? (
-                    <button
-                      data-plasmic-name={"button"}
-                      data-plasmic-override={overrides.button}
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.button,
-                        projectcss.__wab_text,
-                        sty.button
-                      )}
-                    >
-                      {"Sign up"}
-                    </button>
-                  ) : null}
-                  <ContactButton
-                    className={classNames(
-                      "__wab_instance",
-                      sty.contactButton__z3Hng
-                    )}
-                    color={"clear"}
-                    endIcon={
-                      <Icon38Icon
-                        className={classNames(projectcss.all, sty.svg__odU1D)}
-                        role={"img"}
-                      />
-                    }
-                    startIcon={
-                      <ChecksvgIcon
-                        className={classNames(projectcss.all, sty.svg__ti1HW)}
-                        role={"img"}
-                      />
-                    }
-                    submitsForm={true}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__s1Hkp
-                      )}
-                    >
-                      {"Contact Me"}
-                    </div>
-                  </ContactButton>
-                </div>
-              </p.Stack>
+              <Header
+                data-plasmic-name={"header"}
+                data-plasmic-override={overrides.header}
+                className={classNames("__wab_instance", sty.header, {
+                  [sty.headerglobal_theme_dark]: hasVariant(
+                    globalVariants,
+                    "theme",
+                    "dark"
+                  )
+                })}
+              />
             </p.Stack>
             <div className={classNames(projectcss.all, sty.freeBox__qT13E)}>
               <p.Stack
@@ -383,24 +188,30 @@ function PlasmicHomepage__RenderFunc(props: {
                     hasGap={true}
                     className={classNames(projectcss.all, sty.freeBox__jJktB)}
                   >
-                    <div
+                    <h1
+                      data-plasmic-name={"h1"}
+                      data-plasmic-override={overrides.h1}
                       className={classNames(
                         projectcss.all,
+                        projectcss.h1,
                         projectcss.__wab_text,
-                        sty.text__r5Rxq
+                        sty.h1
                       )}
                     >
                       {"Its A-Lisa"}
-                    </div>
-                    <div
+                    </h1>
+                    <h3
+                      data-plasmic-name={"h3"}
+                      data-plasmic-override={overrides.h3}
                       className={classNames(
                         projectcss.all,
+                        projectcss.h3,
                         projectcss.__wab_text,
-                        sty.text__zk3H
+                        sty.h3
                       )}
                     >
                       {'"Vivid Facade\nDiverse Layers\nSparkling Aura"'}
-                    </div>
+                    </h3>
                     <div
                       className={classNames(
                         projectcss.all,
@@ -450,7 +261,13 @@ function PlasmicHomepage__RenderFunc(props: {
           <p.Stack
             as={"div"}
             hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox___92BGj)}
+            className={classNames(projectcss.all, sty.freeBox___92BGj, {
+              [sty.freeBoxglobal_theme_dark___92BGj6Jr2E]: hasVariant(
+                globalVariants,
+                "theme",
+                "dark"
+              )
+            })}
           >
             <p.Stack
               as={"div"}
@@ -461,7 +278,14 @@ function PlasmicHomepage__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text__ya4T2
+                  sty.text__ya4T2,
+                  {
+                    [sty.textglobal_theme_dark__ya4T26Jr2E]: hasVariant(
+                      globalVariants,
+                      "theme",
+                      "dark"
+                    )
+                  }
                 )}
               >
                 {"Sassy, classy, and a tad bad-assy"}
@@ -470,16 +294,22 @@ function PlasmicHomepage__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.__wab_text,
-                  sty.text___9G6Ev
+                  sty.text___9G6Ev,
+                  {
+                    [sty.textglobal_theme_dark___9G6Ev6Jr2E]: hasVariant(
+                      globalVariants,
+                      "theme",
+                      "dark"
+                    )
+                  }
                 )}
               >
                 {"Living my life the best I can"}
               </div>
               <ContactButton
-                className={classNames(
-                  "__wab_instance",
-                  sty.contactButton__fhhXv
-                )}
+                data-plasmic-name={"contactButton"}
+                data-plasmic-override={overrides.contactButton}
+                className={classNames("__wab_instance", sty.contactButton)}
                 endIcon={
                   <Icon38Icon
                     className={classNames(projectcss.all, sty.svg__uXnbu)}
@@ -513,453 +343,21 @@ function PlasmicHomepage__RenderFunc(props: {
               >
                 {"This site was made possible by James"}
               </div>
-              <svg
-                className={classNames(projectcss.all, sty.svg__sjs6O)}
-                role={"img"}
-              />
             </p.Stack>
-            <div className={classNames(projectcss.all, sty.freeBox__uCaoi)}>
-              <p.Stack
-                as={"div"}
-                data-plasmic-name={"columns"}
-                data-plasmic-override={overrides.columns}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.columns)}
-              >
-                <div className={classNames(projectcss.all, sty.column__ukEvh)}>
-                  <p.Stack
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox___2KQi5)}
-                  >
-                    <p.PlasmicImg
-                      alt={""}
-                      className={classNames(sty.img___1Qzva)}
-                      displayHeight={"40px"}
-                      displayMaxHeight={"none"}
-                      displayMaxWidth={"none"}
-                      displayMinHeight={"0"}
-                      displayMinWidth={"0"}
-                      displayWidth={"40px"}
-                      src={{
-                        src: "/plasmic/its_a_lisa_site/images/image.svg",
-                        fullWidth: 150,
-                        fullHeight: 150,
-                        aspectRatio: 1
-                      }}
-                    />
-
-                    <p.Stack
-                      as={"div"}
-                      hasGap={true}
-                      className={classNames(
-                        projectcss.all,
-                        sty.freeBox___7EdA5
-                      )}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___1CI
-                        )}
-                      >
-                        {"Connect with us"}
-                      </div>
-                      <p.Stack
-                        as={"div"}
-                        hasGap={true}
-                        className={classNames(
-                          projectcss.all,
-                          sty.freeBox___9WhtL
-                        )}
-                      >
-                        <Icon21Icon
-                          className={classNames(projectcss.all, sty.svg__w0Am)}
-                          role={"img"}
-                        />
-
-                        <Icon22Icon
-                          className={classNames(projectcss.all, sty.svg__z13B0)}
-                          role={"img"}
-                        />
-
-                        <Icon23Icon
-                          className={classNames(projectcss.all, sty.svg__yeRlo)}
-                          role={"img"}
-                        />
-                      </p.Stack>
-                    </p.Stack>
-                  </p.Stack>
-                </div>
-                <div className={classNames(projectcss.all, sty.column__dcPv5)}>
-                  <p.Stack
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__mT5X)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__lkfx0
-                      )}
-                    >
-                      {"ABOUT"}
-                    </div>
-                    <ContactButton
-                      className={classNames(
-                        "__wab_instance",
-                        sty.contactButton__dhnyx
-                      )}
-                      color={"clear"}
-                      endIcon={
-                        <Icon38Icon
-                          className={classNames(projectcss.all, sty.svg__siOd1)}
-                          role={"img"}
-                        />
-                      }
-                      size={"minimal"}
-                      startIcon={
-                        <ChecksvgIcon
-                          className={classNames(projectcss.all, sty.svg__uKwzM)}
-                          role={"img"}
-                        />
-                      }
-                      submitsForm={true}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__bBcmh
-                        )}
-                      >
-                        {"Bio"}
-                      </div>
-                    </ContactButton>
-                    <ContactButton
-                      className={classNames(
-                        "__wab_instance",
-                        sty.contactButton__q5UGr
-                      )}
-                      color={"clear"}
-                      endIcon={
-                        <Icon38Icon
-                          className={classNames(projectcss.all, sty.svg__zrJc6)}
-                          role={"img"}
-                        />
-                      }
-                      size={"minimal"}
-                      startIcon={
-                        <ChecksvgIcon
-                          className={classNames(projectcss.all, sty.svg__d0Uw)}
-                          role={"img"}
-                        />
-                      }
-                      submitsForm={true}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___9Eyg
-                        )}
-                      >
-                        {"Resume"}
-                      </div>
-                    </ContactButton>
-                    <ContactButton
-                      className={classNames(
-                        "__wab_instance",
-                        sty.contactButton___4Lerg
-                      )}
-                      color={"clear"}
-                      endIcon={
-                        <Icon38Icon
-                          className={classNames(projectcss.all, sty.svg__auItt)}
-                          role={"img"}
-                        />
-                      }
-                      size={"minimal"}
-                      startIcon={
-                        <ChecksvgIcon
-                          className={classNames(projectcss.all, sty.svg__zWt9D)}
-                          role={"img"}
-                        />
-                      }
-                      submitsForm={true}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__qGkCe
-                        )}
-                      >
-                        {"Values"}
-                      </div>
-                    </ContactButton>
-                  </p.Stack>
-                </div>
-                <div className={classNames(projectcss.all, sty.column__ekx7Z)}>
-                  <p.Stack
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__dz4Pi)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__xEslA
-                      )}
-                    >
-                      {"PROJECTS/RESEARCH"}
-                    </div>
-                    <ContactButton
-                      className={classNames(
-                        "__wab_instance",
-                        sty.contactButton__pgs90
-                      )}
-                      color={"clear"}
-                      endIcon={
-                        <Icon38Icon
-                          className={classNames(projectcss.all, sty.svg__iEc4Y)}
-                          role={"img"}
-                        />
-                      }
-                      size={"minimal"}
-                      startIcon={
-                        <ChecksvgIcon
-                          className={classNames(projectcss.all, sty.svg__omCrw)}
-                          role={"img"}
-                        />
-                      }
-                      submitsForm={true}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__cmBqh
-                        )}
-                      >
-                        {"Hobbie"}
-                      </div>
-                    </ContactButton>
-                    <ContactButton
-                      className={classNames(
-                        "__wab_instance",
-                        sty.contactButton__ql8Ik
-                      )}
-                      color={"clear"}
-                      endIcon={
-                        <Icon38Icon
-                          className={classNames(projectcss.all, sty.svg__mwMvc)}
-                          role={"img"}
-                        />
-                      }
-                      size={"minimal"}
-                      startIcon={
-                        <ChecksvgIcon
-                          className={classNames(projectcss.all, sty.svg__gad6H)}
-                          role={"img"}
-                        />
-                      }
-                      submitsForm={true}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__dhPlY
-                        )}
-                      >
-                        {"Professional"}
-                      </div>
-                    </ContactButton>
-                    <ContactButton
-                      className={classNames(
-                        "__wab_instance",
-                        sty.contactButton__tgXut
-                      )}
-                      color={"clear"}
-                      endIcon={
-                        <Icon38Icon
-                          className={classNames(projectcss.all, sty.svg__vlxLa)}
-                          role={"img"}
-                        />
-                      }
-                      size={"minimal"}
-                      startIcon={
-                        <ChecksvgIcon
-                          className={classNames(projectcss.all, sty.svg__u736P)}
-                          role={"img"}
-                        />
-                      }
-                      submitsForm={true}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__g4WZg
-                        )}
-                      >
-                        {"Academic"}
-                      </div>
-                    </ContactButton>
-                  </p.Stack>
-                </div>
-                <div className={classNames(projectcss.all, sty.column__zRf70)}>
-                  <p.Stack
-                    as={"div"}
-                    hasGap={true}
-                    className={classNames(projectcss.all, sty.freeBox__rbYmh)}
-                  >
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__duGYf
-                      )}
-                    >
-                      {"RESOURCES"}
-                    </div>
-                    <ContactButton
-                      className={classNames(
-                        "__wab_instance",
-                        sty.contactButton__m8H1P
-                      )}
-                      color={"clear"}
-                      endIcon={
-                        <Icon38Icon
-                          className={classNames(
-                            projectcss.all,
-                            sty.svg___6YGk7
-                          )}
-                          role={"img"}
-                        />
-                      }
-                      size={"minimal"}
-                      startIcon={
-                        <ChecksvgIcon
-                          className={classNames(projectcss.all, sty.svg__xHxR)}
-                          role={"img"}
-                        />
-                      }
-                      submitsForm={true}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__r8Pk1
-                        )}
-                      >
-                        {"Women in Tech"}
-                      </div>
-                    </ContactButton>
-                    <ContactButton
-                      className={classNames(
-                        "__wab_instance",
-                        sty.contactButton__ioeo0
-                      )}
-                      color={"clear"}
-                      endIcon={
-                        <Icon38Icon
-                          className={classNames(projectcss.all, sty.svg__pllM)}
-                          role={"img"}
-                        />
-                      }
-                      size={"minimal"}
-                      startIcon={
-                        <ChecksvgIcon
-                          className={classNames(projectcss.all, sty.svg__chH5P)}
-                          role={"img"}
-                        />
-                      }
-                      submitsForm={true}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__p2XGe
-                        )}
-                      >
-                        {"Neurodiversity"}
-                      </div>
-                    </ContactButton>
-                    <ContactButton
-                      className={classNames(
-                        "__wab_instance",
-                        sty.contactButton__hhEQk
-                      )}
-                      color={"clear"}
-                      endIcon={
-                        <Icon38Icon
-                          className={classNames(
-                            projectcss.all,
-                            sty.svg___5K3Z6
-                          )}
-                          role={"img"}
-                        />
-                      }
-                      size={"minimal"}
-                      startIcon={
-                        <ChecksvgIcon
-                          className={classNames(projectcss.all, sty.svg__nal2F)}
-                          role={"img"}
-                        />
-                      }
-                      submitsForm={true}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__fP2Lj
-                        )}
-                      >
-                        {"Winning in the Workforce"}
-                      </div>
-                    </ContactButton>
-                    <ContactButton
-                      className={classNames(
-                        "__wab_instance",
-                        sty.contactButton___0Z10
-                      )}
-                      color={"clear"}
-                      endIcon={
-                        <Icon38Icon
-                          className={classNames(projectcss.all, sty.svg__oIXs9)}
-                          role={"img"}
-                        />
-                      }
-                      size={"minimal"}
-                      startIcon={
-                        <ChecksvgIcon
-                          className={classNames(projectcss.all, sty.svg__xsKwm)}
-                          role={"img"}
-                        />
-                      }
-                      submitsForm={true}
-                    >
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__ctfsm
-                        )}
-                      >
-                        {"Cyber Risk Management"}
-                      </div>
-                    </ContactButton>
-                  </p.Stack>
-                </div>
-              </p.Stack>
+            <div
+              className={classNames(projectcss.all, sty.freeBox__uCaoi, {
+                [sty.freeBoxglobal_theme_dark__uCaoi6Jr2E]: hasVariant(
+                  globalVariants,
+                  "theme",
+                  "dark"
+                )
+              })}
+            >
+              <Footer
+                data-plasmic-name={"footer"}
+                data-plasmic-override={overrides.footer}
+                className={classNames("__wab_instance", sty.footer)}
+              />
             </div>
           </p.Stack>
         </div>
@@ -969,42 +367,27 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "home",
-    "about",
-    "blog",
-    "projectsResearch",
-    "resources",
-    "button",
-    "ul",
-    "li",
-    "columns"
-  ],
-  home: ["home"],
-  about: ["about"],
-  blog: ["blog"],
-  projectsResearch: ["projectsResearch"],
-  resources: ["resources"],
-  button: ["button"],
+  root: ["root", "header", "h1", "h3", "ul", "li", "contactButton", "footer"],
+  header: ["header"],
+  h1: ["h1"],
+  h3: ["h3"],
   ul: ["ul", "li"],
   li: ["li"],
-  columns: ["columns"]
+  contactButton: ["contactButton"],
+  footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  home: typeof ContactButton;
-  about: typeof ContactButton;
-  blog: typeof ContactButton;
-  projectsResearch: typeof ContactButton;
-  resources: typeof ContactButton;
-  button: "button";
+  header: typeof Header;
+  h1: "h1";
+  h3: "h3";
   ul: "ul";
   li: "li";
-  columns: "div";
+  contactButton: typeof ContactButton;
+  footer: typeof Footer;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1041,7 +424,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       () =>
         deriveRenderOpts(props, {
           name: nodeName,
-          descendantNames: [...PlasmicDescendants[nodeName]],
+          descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicHomepage__ArgProps,
           internalVariantPropNames: PlasmicHomepage__VariantProps
         }),
@@ -1067,15 +450,13 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    home: makeNodeComponent("home"),
-    about: makeNodeComponent("about"),
-    blog: makeNodeComponent("blog"),
-    projectsResearch: makeNodeComponent("projectsResearch"),
-    resources: makeNodeComponent("resources"),
-    button: makeNodeComponent("button"),
+    header: makeNodeComponent("header"),
+    h1: makeNodeComponent("h1"),
+    h3: makeNodeComponent("h3"),
     ul: makeNodeComponent("ul"),
     li: makeNodeComponent("li"),
-    columns: makeNodeComponent("columns"),
+    contactButton: makeNodeComponent("contactButton"),
+    footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

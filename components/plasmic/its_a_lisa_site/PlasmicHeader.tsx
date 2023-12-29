@@ -37,7 +37,9 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import ContactButton from "../../ContactButton"; // plasmic-import: cAOyLxN62SOb/component
+import Switch from "../../Switch"; // plasmic-import: 08tV0C4XRgYQ/component
 
+import { ThemeValue, useTheme } from "./PlasmicGlobalVariant__Theme"; // plasmic-import: 0mo4e2K7LvGd/globalVariant
 import { useScreenVariants as useScreenVariantsniKtHGeB1Opg } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: NIKtHGeB1opg/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -61,7 +63,6 @@ export const PlasmicHeader__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHeader__OverridesType = {
   header?: p.Flex<"div">;
-  img?: p.Flex<typeof p.PlasmicImg>;
   home?: p.Flex<typeof ContactButton>;
   about?: p.Flex<typeof ContactButton>;
   blog?: p.Flex<typeof ContactButton>;
@@ -69,6 +70,7 @@ export type PlasmicHeader__OverridesType = {
   resources?: p.Flex<typeof ContactButton>;
   button?: p.Flex<"button">;
   contactButton?: p.Flex<typeof ContactButton>;
+  _switch?: p.Flex<typeof Switch>;
 };
 
 export interface DefaultHeaderProps {
@@ -106,7 +108,26 @@ function PlasmicHeader__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
 
+  const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "_switch.isChecked",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = p.useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
+
   const globalVariants = ensureGlobalVariants({
+    theme: useTheme(),
     screen: useScreenVariantsniKtHGeB1Opg()
   });
 
@@ -122,7 +143,19 @@ function PlasmicHeader__RenderFunc(props: {
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
-        sty.header
+        sty.header,
+        {
+          [projectcss.global_theme_dark]: hasVariant(
+            globalVariants,
+            "theme",
+            "dark"
+          ),
+          [sty.headerglobal_theme_dark]: hasVariant(
+            globalVariants,
+            "theme",
+            "dark"
+          )
+        }
       )}
     >
       <p.Stack
@@ -135,25 +168,6 @@ function PlasmicHeader__RenderFunc(props: {
           hasGap={true}
           className={classNames(projectcss.all, sty.freeBox__pkbgm)}
         >
-          <p.PlasmicImg
-            data-plasmic-name={"img"}
-            data-plasmic-override={overrides.img}
-            alt={""}
-            className={classNames(sty.img)}
-            displayHeight={"auto"}
-            displayMaxHeight={"none"}
-            displayMaxWidth={"none"}
-            displayMinHeight={"0"}
-            displayMinWidth={"0"}
-            displayWidth={"40px"}
-            src={{
-              src: "/plasmic/its_a_lisa_site/images/image.svg",
-              fullWidth: 150,
-              fullHeight: 150,
-              aspectRatio: 1
-            }}
-          />
-
           <p.Stack
             as={"div"}
             hasGap={true}
@@ -350,6 +364,28 @@ function PlasmicHeader__RenderFunc(props: {
               </div>
             </ContactButton>
           </div>
+          <Switch
+            data-plasmic-name={"_switch"}
+            data-plasmic-override={overrides._switch}
+            className={classNames("__wab_instance", sty._switch, {
+              [sty._switchglobal_theme_dark]: hasVariant(
+                globalVariants,
+                "theme",
+                "dark"
+              )
+            })}
+            isChecked={
+              p.generateStateValueProp($state, ["_switch", "isChecked"]) ??
+              false
+            }
+            onChange={(...eventArgs) => {
+              p.generateStateOnChangeProp($state, ["_switch", "isChecked"])(
+                eventArgs[0]
+              );
+            }}
+          >
+            {"Theme"}
+          </Switch>
         </p.Stack>
       </p.Stack>
     </div>
@@ -359,30 +395,29 @@ function PlasmicHeader__RenderFunc(props: {
 const PlasmicDescendants = {
   header: [
     "header",
-    "img",
     "home",
     "about",
     "blog",
     "projects",
     "resources",
     "button",
-    "contactButton"
+    "contactButton",
+    "_switch"
   ],
-  img: ["img"],
   home: ["home"],
   about: ["about"],
   blog: ["blog"],
   projects: ["projects"],
   resources: ["resources"],
   button: ["button"],
-  contactButton: ["contactButton"]
+  contactButton: ["contactButton"],
+  _switch: ["_switch"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   header: "div";
-  img: typeof p.PlasmicImg;
   home: typeof ContactButton;
   about: typeof ContactButton;
   blog: typeof ContactButton;
@@ -390,6 +425,7 @@ type NodeDefaultElementType = {
   resources: typeof ContactButton;
   button: "button";
   contactButton: typeof ContactButton;
+  _switch: typeof Switch;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -426,7 +462,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       () =>
         deriveRenderOpts(props, {
           name: nodeName,
-          descendantNames: [...PlasmicDescendants[nodeName]],
+          descendantNames: PlasmicDescendants[nodeName],
           internalArgPropNames: PlasmicHeader__ArgProps,
           internalVariantPropNames: PlasmicHeader__VariantProps
         }),
@@ -452,7 +488,6 @@ export const PlasmicHeader = Object.assign(
   makeNodeComponent("header"),
   {
     // Helper components rendering sub-elements
-    img: makeNodeComponent("img"),
     home: makeNodeComponent("home"),
     about: makeNodeComponent("about"),
     blog: makeNodeComponent("blog"),
@@ -460,6 +495,7 @@ export const PlasmicHeader = Object.assign(
     resources: makeNodeComponent("resources"),
     button: makeNodeComponent("button"),
     contactButton: makeNodeComponent("contactButton"),
+    _switch: makeNodeComponent("_switch"),
 
     // Metadata about props expected for PlasmicHeader
     internalVariantProps: PlasmicHeader__VariantProps,

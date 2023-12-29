@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
-  background: linear-gradient(#deb5b6bf, #deb5b6bf),
+  background: linear-gradient(#f0bbcc80, #f0bbcc80),
     url("/plasmic/its_a_lisa_site/images/juegodynamicsVeryDetailedFantasyMapSurfaceOfAGasGiantFe8Ce9CeB69040F68Dbc2B5248121379Png.png") left 50% top 50% / cover repeat;
   width: 100%;
   position: relative;
@@ -13,16 +13,17 @@
 .freeBox__mkqy {
   display: flex;
   flex-direction: row;
+  padding-bottom: 0px;
   width: 100%;
   position: relative;
   top: 0;
   left: 0;
   z-index: 1;
   right: 0;
-  background: #ffffff40;
+  background: var(--token-pje0kVGj5QUT);
+  opacity: 0.5;
   grid-column-start: 1 !important;
   grid-column-end: -1 !important;
-  padding: 16px;
 }
 .freeBox__mkqy > :global(.__wab_flex-container) {
   flex-direction: row;
@@ -101,17 +102,6 @@
     margin-top: 16px;
   }
 }
-.img {
-  object-fit: cover;
-  width: 40px;
-  flex-shrink: 0;
-}
-.img > picture > img {
-  object-fit: cover;
-}
-.img > :global(.__wab_img-spacer) > img {
-  object-fit: cover;
-}
 .freeBox__g5Coh {
   display: flex;
   position: relative;
@@ -166,11 +156,11 @@
   height: 1em;
 }
 .text__lnLeW {
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-family: var(--token-8xGuBN9dmi8z);
+  font-size: var(--token-B0HKSOm6kBK4);
   font-weight: 500;
   font-style: normal;
-  color: #1b1b18;
+  color: var(--token-oXG0k4uCcLuN);
   text-align: left;
   text-transform: none;
   line-height: 1.5;
@@ -230,11 +220,11 @@
   height: 1em;
 }
 .text__zrZWq {
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-family: var(--token-8xGuBN9dmi8z);
+  font-size: var(--token-B0HKSOm6kBK4);
   font-weight: 500;
   font-style: normal;
-  color: #1b1b18;
+  color: var(--token-oXG0k4uCcLuN);
   text-align: left;
   text-transform: none;
   line-height: 1.5;
@@ -262,11 +252,11 @@
   height: 1em;
 }
 .text__jumV {
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-family: var(--token-8xGuBN9dmi8z);
+  font-size: var(--token-B0HKSOm6kBK4);
   font-weight: 500;
   font-style: normal;
-  color: #1b1b18;
+  color: var(--token-oXG0k4uCcLuN);
   text-align: left;
   text-transform: none;
   line-height: 1.5;
@@ -294,11 +284,11 @@
   height: 1em;
 }
 .text__ve629 {
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-family: var(--token-8xGuBN9dmi8z);
+  font-size: var(--token-B0HKSOm6kBK4);
   font-weight: 500;
   font-style: normal;
-  color: #1b1b18;
+  color: var(--token-oXG0k4uCcLuN);
   text-align: left;
   text-transform: none;
   line-height: 1.5;
@@ -350,11 +340,11 @@
   height: 1em;
 }
 .text__x8M3B {
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-family: var(--token-8xGuBN9dmi8z);
+  font-size: var(--token-B0HKSOm6kBK4);
   font-weight: 500;
   font-style: normal;
-  color: #1b1b18;
+  color: var(--token-oXG0k4uCcLuN);
   text-align: left;
   text-transform: none;
   line-height: 1.5;
@@ -369,4 +359,8 @@
   object-fit: cover;
   width: auto;
   height: 1em;
+}
+._switch:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
 }

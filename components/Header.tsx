@@ -9,15 +9,13 @@ import { useSelector } from "@plasmicapp/react-web/lib/host";
 export interface HeaderProps extends DefaultHeaderProps {}
 
 function Header_(props: HeaderProps, ref: HTMLElementRefOf<"div">) {
-
-const changeMode = useSelector('changeMode')
+  const changeMode = useSelector('changeMode');
 
   return <PlasmicHeader 
-  header={{ ref }}
-  _switch={{ 
+  header={{ ref }} _switch={{
     onChange: (isChecked) => {
-      changeMode(isChecked ? 'dark' : undefined);
-    },
+      changeMode(isChecked ? "dark" : undefined);
+    }
   }}
   {...props} 
   />;

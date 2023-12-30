@@ -70,7 +70,7 @@ export type PlasmicHeader__OverridesType = {
   resources?: p.Flex<typeof ContactButton>;
   button?: p.Flex<"button">;
   contactButton?: p.Flex<typeof ContactButton>;
-  _switch?: p.Flex<typeof Switch>;
+  themeSwitch?: p.Flex<typeof Switch>;
 };
 
 export interface DefaultHeaderProps {
@@ -111,10 +111,23 @@ function PlasmicHeader__RenderFunc(props: {
   const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
     () => [
       {
-        path: "_switch.isChecked",
+        path: "themeSwitch.isChecked",
         type: "private",
         variableType: "boolean",
-        initFunc: ({ $props, $state, $queries, $ctx }) => []
+        initFunc: ({ $props, $state, $queries, $ctx }) =>
+          (() => {
+            try {
+              return $ctx.setDark;
+            } catch (e) {
+              if (
+                e instanceof TypeError ||
+                e?.plasmicType === "PlasmicUndefinedDataError"
+              ) {
+                return [];
+              }
+              throw e;
+            }
+          })()
       }
     ],
     [$props, $ctx, $refs]
@@ -364,28 +377,61 @@ function PlasmicHeader__RenderFunc(props: {
               </div>
             </ContactButton>
           </div>
-          <Switch
-            data-plasmic-name={"_switch"}
-            data-plasmic-override={overrides._switch}
-            className={classNames("__wab_instance", sty._switch, {
-              [sty._switchglobal_theme_dark]: hasVariant(
-                globalVariants,
-                "theme",
-                "dark"
-              )
-            })}
-            isChecked={
-              p.generateStateValueProp($state, ["_switch", "isChecked"]) ??
-              false
-            }
-            onChange={(...eventArgs) => {
-              p.generateStateOnChangeProp($state, ["_switch", "isChecked"])(
-                eventArgs[0]
-              );
-            }}
-          >
-            {"Theme"}
-          </Switch>
+          {(() => {
+            const child$Props = {
+              className: classNames("__wab_instance", sty.themeSwitch, {
+                [sty.themeSwitchglobal_theme_dark]: hasVariant(
+                  globalVariants,
+                  "theme",
+                  "dark"
+                )
+              }),
+              isChecked:
+                p.generateStateValueProp($state, [
+                  "themeSwitch",
+                  "isChecked"
+                ]) ?? false,
+              onChange: (...eventArgs) => {
+                p.generateStateOnChangeProp($state, [
+                  "themeSwitch",
+                  "isChecked"
+                ])(eventArgs[0]);
+              }
+            };
+
+            p.initializePlasmicStates(
+              $state,
+              [
+                {
+                  name: "themeSwitch.isChecked",
+                  initFunc: ({ $props, $state, $queries }) =>
+                    (() => {
+                      try {
+                        return $ctx.setDark;
+                      } catch (e) {
+                        if (
+                          e instanceof TypeError ||
+                          e?.plasmicType === "PlasmicUndefinedDataError"
+                        ) {
+                          return [];
+                        }
+                        throw e;
+                      }
+                    })()
+                }
+              ],
+              []
+            );
+            return (
+              <Switch
+                data-plasmic-name={"themeSwitch"}
+                data-plasmic-override={overrides.themeSwitch}
+                {...child$Props}
+              >
+                {"Theme"}
+              </Switch>
+            );
+          })()}
         </p.Stack>
       </p.Stack>
     </div>
@@ -402,7 +448,7 @@ const PlasmicDescendants = {
     "resources",
     "button",
     "contactButton",
-    "_switch"
+    "themeSwitch"
   ],
   home: ["home"],
   about: ["about"],
@@ -411,7 +457,7 @@ const PlasmicDescendants = {
   resources: ["resources"],
   button: ["button"],
   contactButton: ["contactButton"],
-  _switch: ["_switch"]
+  themeSwitch: ["themeSwitch"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -425,7 +471,7 @@ type NodeDefaultElementType = {
   resources: typeof ContactButton;
   button: "button";
   contactButton: typeof ContactButton;
-  _switch: typeof Switch;
+  themeSwitch: typeof Switch;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -495,7 +541,7 @@ export const PlasmicHeader = Object.assign(
     resources: makeNodeComponent("resources"),
     button: makeNodeComponent("button"),
     contactButton: makeNodeComponent("contactButton"),
-    _switch: makeNodeComponent("_switch"),
+    themeSwitch: makeNodeComponent("themeSwitch"),
 
     // Metadata about props expected for PlasmicHeader
     internalVariantProps: PlasmicHeader__VariantProps,

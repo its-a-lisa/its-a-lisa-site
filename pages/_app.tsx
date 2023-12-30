@@ -5,18 +5,23 @@ import Head from "next/head";
 import { useState } from "react";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  const [dark, setDark] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+   // Toggle the theme mode
+   const toggleDarkMode = () => {
+    setDarkMode((prevMode) => !prevMode);
+  };
 
   return (
      
     <PlasmicRootProvider
       Head={Head}
       globalVariants={[
-        // Add the missing globalVariants property
-        { name: "Theme", value: dark ? "dark" : undefined },
+        // Set the "Theme" variant based on darkMode state
+        { name: "Theme", value: darkMode ? "dark" : undefined },
       ]}
     >
-      <Component {...pageProps} />
+      <Component {...pageProps} darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
     </PlasmicRootProvider>
   );
 }

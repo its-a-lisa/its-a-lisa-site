@@ -358,15 +358,6 @@ function PlasmicHomepage__RenderFunc(props: {
                   {"Get to know me"}
                 </div>
               </ContactButton>
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__gwDtr
-                )}
-              >
-                {"This site was made possible by James"}
-              </div>
             </p.Stack>
             <div
               className={classNames(projectcss.all, sty.freeBox__uCaoi, {

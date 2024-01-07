@@ -26,8 +26,8 @@ spec:
     git:
       uri: 'https://github.com/its-a-lisa/its-a-lisa-site'
   triggers:
-    - type: GitHub
-      github:
+    - type: Generic
+      generic:
         secretReference:
           name: its-a-lisa-site-github
     - type: ImageChange

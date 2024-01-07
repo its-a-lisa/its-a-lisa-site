@@ -9,10 +9,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - its-a-lisa.solacelost.dev
+    - its-a-lisa.com
     secretName: its-a-lisa-site-cert
   rules:
-  - host: its-a-lisa.solacelost.dev
+  - host: its-a-lisa.com
     http:
       paths:
       - path: /

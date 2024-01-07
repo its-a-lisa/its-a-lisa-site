@@ -1,7 +1,7 @@
 kind: BuildConfig
 apiVersion: build.openshift.io/v1
 metadata:
-  name: its-a-lisa-site
+  name: its-a-lisa-site-dev
   namespace: alyssa
   labels:
     app: its-a-lisa-site
@@ -11,7 +11,7 @@ spec:
   output:
     to:
       kind: ImageStreamTag
-      name: 'its-a-lisa-site:latest'
+      name: 'its-a-lisa-site:dev'
   successfulBuildsHistoryLimit: 5
   failedBuildsHistoryLimit: 5
   strategy:
@@ -26,6 +26,10 @@ spec:
     git:
       uri: 'https://github.com/its-a-lisa/its-a-lisa-site'
   triggers:
+    - type: Generic
+      generic:
+        secretReference:
+          name: its-a-lisa-site-github
     - type: ImageChange
       imageChange:
         from:

@@ -37,7 +37,6 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: HBjN2PI6FOY_/component
-import ContactButton from "../../ContactButton"; // plasmic-import: cAOyLxN62SOb/component
 import Footer from "../../Footer"; // plasmic-import: Z-CrKblPINiy/component
 
 import { ThemeValue, useTheme } from "./PlasmicGlobalVariant__Theme"; // plasmic-import: 0mo4e2K7LvGd/globalVariant
@@ -47,9 +46,6 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_its_a_lisa_site.module.css"; // plasmic-import: tt6TsnGtggzVZCRW2FQ8Vk/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: qAL5iQ50tsT6/css
-
-import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: huLMvL5wIXy1/icon
-import Icon38Icon from "./icons/PlasmicIcon__Icon38"; // plasmic-import: FYLMO-tZsz_5/icon
 
 createPlasmicElementProxy;
 
@@ -69,7 +65,6 @@ export type PlasmicHomepage__OverridesType = {
   h3?: p.Flex<"h3">;
   ul?: p.Flex<"ul">;
   li?: p.Flex<"li">;
-  contactButton?: p.Flex<typeof ContactButton>;
   footer?: p.Flex<typeof Footer>;
 };
 
@@ -330,34 +325,6 @@ function PlasmicHomepage__RenderFunc(props: {
               >
                 {"Living my life the best I can"}
               </div>
-              <ContactButton
-                data-plasmic-name={"contactButton"}
-                data-plasmic-override={overrides.contactButton}
-                className={classNames("__wab_instance", sty.contactButton)}
-                endIcon={
-                  <Icon38Icon
-                    className={classNames(projectcss.all, sty.svg__uXnbu)}
-                    role={"img"}
-                  />
-                }
-                startIcon={
-                  <ChecksvgIcon
-                    className={classNames(projectcss.all, sty.svg__kKb21)}
-                    role={"img"}
-                  />
-                }
-                submitsForm={true}
-              >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__xjUoR
-                  )}
-                >
-                  {"Get to know me"}
-                </div>
-              </ContactButton>
             </p.Stack>
             <div
               className={classNames(projectcss.all, sty.freeBox__uCaoi, {
@@ -382,13 +349,12 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "header", "h1", "h3", "ul", "li", "contactButton", "footer"],
+  root: ["root", "header", "h1", "h3", "ul", "li", "footer"],
   header: ["header"],
   h1: ["h1"],
   h3: ["h3"],
   ul: ["ul", "li"],
   li: ["li"],
-  contactButton: ["contactButton"],
   footer: ["footer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -401,7 +367,6 @@ type NodeDefaultElementType = {
   h3: "h3";
   ul: "ul";
   li: "li";
-  contactButton: typeof ContactButton;
   footer: typeof Footer;
 };
 
@@ -470,7 +435,6 @@ export const PlasmicHomepage = Object.assign(
     h3: makeNodeComponent("h3"),
     ul: makeNodeComponent("ul"),
     li: makeNodeComponent("li"),
-    contactButton: makeNodeComponent("contactButton"),
     footer: makeNodeComponent("footer"),
 
     // Metadata about props expected for PlasmicHomepage

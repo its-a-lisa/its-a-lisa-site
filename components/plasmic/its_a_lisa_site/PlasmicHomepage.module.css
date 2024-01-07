@@ -342,37 +342,6 @@
 .textglobal_theme_dark___9G6Ev6Jr2E {
   color: var(--token-oXG0k4uCcLuN);
 }
-.contactButton:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-}
-.svg__kKb21 {
-  position: relative;
-  object-fit: cover;
-  width: auto;
-  height: 1em;
-}
-.text__xjUoR {
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  font-style: normal;
-  color: #ededec;
-  text-align: left;
-  text-transform: none;
-  line-height: 1.5;
-  letter-spacing: normal;
-  white-space: pre;
-  user-select: text;
-  text-decoration-line: none !important;
-  text-overflow: clip !important;
-}
-.svg__uXnbu {
-  position: relative;
-  object-fit: cover;
-  width: auto;
-  height: 1em;
-}
 .freeBox__uCaoi {
   display: flex;
   flex-direction: column;

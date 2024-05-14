@@ -96,10 +96,16 @@ import Icon38Icon from "./icons/PlasmicIcon__Icon38"; // plasmic-import: FYLMO-t
 
 createPlasmicElementProxy;
 
-export type PlasmicPatternCard__VariantMembers = {};
-export type PlasmicPatternCard__VariantsArgs = {};
+export type PlasmicPatternCard__VariantMembers = {
+  hideButtons: "hideButtons";
+};
+export type PlasmicPatternCard__VariantsArgs = {
+  hideButtons?: SingleBooleanChoiceArg<"hideButtons">;
+};
 type VariantPropType = keyof PlasmicPatternCard__VariantsArgs;
-export const PlasmicPatternCard__VariantProps = new Array<VariantPropType>();
+export const PlasmicPatternCard__VariantProps = new Array<VariantPropType>(
+  "hideButtons"
+);
 
 export type PlasmicPatternCard__ArgsType = {
   children?: React.ReactNode;
@@ -127,6 +133,7 @@ export interface DefaultPatternCardProps {
   slot?: React.ReactNode;
   slot2?: React.ReactNode;
   slot3?: React.ReactNode;
+  hideButtons?: SingleBooleanChoiceArg<"hideButtons">;
   className?: string;
 }
 
@@ -160,6 +167,24 @@ function PlasmicPatternCard__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const currentUser = useCurrentUser?.() || {};
+
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "hideButtons",
+        type: "private",
+        variableType: "variant",
+        initFunc: ({ $props, $state, $queries, $ctx }) => $props.hideButtons
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
 
   const globalVariants = ensureGlobalVariants({
     mode: useMode(),
@@ -236,7 +261,13 @@ function PlasmicPatternCard__RenderFunc(props: {
         data-plasmic-name={"freeBox"}
         data-plasmic-override={overrides.freeBox}
         hasGap={true}
-        className={classNames(projectcss.all, sty.freeBox)}
+        className={classNames(projectcss.all, sty.freeBox, {
+          [sty.freeBoxhideButtons]: hasVariant(
+            $state,
+            "hideButtons",
+            "hideButtons"
+          )
+        })}
       >
         <CompButton
           className={classNames("__wab_instance", sty.compButton__yI22H)}

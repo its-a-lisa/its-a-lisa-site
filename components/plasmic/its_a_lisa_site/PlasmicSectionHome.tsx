@@ -207,6 +207,7 @@ function PlasmicSectionHome__RenderFunc(props: {
         <PatternCard
           data-plasmic-name={"patternCard"}
           data-plasmic-override={overrides.patternCard}
+          hideButtons={true}
         >
           <div
             data-plasmic-name={"text"}

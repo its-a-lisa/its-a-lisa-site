@@ -109,6 +109,8 @@ export type PlasmicBio__OverridesType = {
   root?: Flex__<"div">;
   layoutDefault?: Flex__<typeof LayoutDefault>;
   underConstruction?: Flex__<typeof UnderConstruction>;
+  text?: Flex__<"div">;
+  code?: Flex__<"code">;
 };
 
 export interface DefaultBioProps {}
@@ -212,7 +214,39 @@ function PlasmicBio__RenderFunc(props: {
               data-plasmic-name={"underConstruction"}
               data-plasmic-override={overrides.underConstruction}
               className={classNames("__wab_instance", sty.underConstruction)}
-            />
+            >
+              <div
+                data-plasmic-name={"text"}
+                data-plasmic-override={overrides.text}
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text
+                )}
+              >
+                <React.Fragment>
+                  <React.Fragment>{""}</React.Fragment>
+                  {
+                    <code
+                      data-plasmic-name={"code"}
+                      data-plasmic-override={overrides.code}
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.code,
+                        projectcss.__wab_text,
+                        projectcss.plasmic_default__inline,
+                        sty.code
+                      )}
+                    >
+                      {"Bio"}
+                    </code>
+                  }
+                  <React.Fragment>
+                    {" Page is Under construction :)"}
+                  </React.Fragment>
+                </React.Fragment>
+              </div>
+            </UnderConstruction>
           </LayoutDefault>
         </div>
       </div>
@@ -221,9 +255,11 @@ function PlasmicBio__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "layoutDefault", "underConstruction"],
-  layoutDefault: ["layoutDefault", "underConstruction"],
-  underConstruction: ["underConstruction"]
+  root: ["root", "layoutDefault", "underConstruction", "text", "code"],
+  layoutDefault: ["layoutDefault", "underConstruction", "text", "code"],
+  underConstruction: ["underConstruction", "text", "code"],
+  text: ["text", "code"],
+  code: ["code"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -232,6 +268,8 @@ type NodeDefaultElementType = {
   root: "div";
   layoutDefault: typeof LayoutDefault;
   underConstruction: typeof UnderConstruction;
+  text: "div";
+  code: "code";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -296,6 +334,8 @@ export const PlasmicBio = Object.assign(
     // Helper components rendering sub-elements
     layoutDefault: makeNodeComponent("layoutDefault"),
     underConstruction: makeNodeComponent("underConstruction"),
+    text: makeNodeComponent("text"),
+    code: makeNodeComponent("code"),
 
     // Metadata about props expected for PlasmicBio
     internalVariantProps: PlasmicBio__VariantProps,

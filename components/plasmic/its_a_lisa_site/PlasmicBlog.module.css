@@ -1,0 +1,31 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+}
+.layoutDefault:global(.__wab_instance) {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.layoutHeader__p9Wp8:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.layoutFooter__vk6X3:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+.underConstruction:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}

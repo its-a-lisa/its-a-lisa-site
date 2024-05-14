@@ -202,7 +202,6 @@
   max-width: 100%;
   position: relative;
   align-self: flex-start;
-  display: none;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .blog:global(.__wab_instance) {
@@ -242,7 +241,6 @@
   max-width: 100%;
   position: relative;
   align-self: flex-start;
-  display: none;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .projects:global(.__wab_instance) {
@@ -282,7 +280,6 @@
   max-width: 100%;
   position: relative;
   align-self: flex-start;
-  display: none;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .resources:global(.__wab_instance) {

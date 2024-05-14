@@ -241,6 +241,48 @@
           "cssFilePath": "plasmic/its_a_lisa_site/PlasmicUnderConstruction.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "eq7pKZGIMMAm",
+          "name": "Resources",
+          "type": "managed",
+          "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
+          "renderModuleFilePath": "plasmic/its_a_lisa_site/PlasmicResources.tsx",
+          "importSpec": {
+            "modulePath": "../pages/resources.tsx"
+          },
+          "cssFilePath": "plasmic/its_a_lisa_site/PlasmicResources.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/resources"
+        },
+        {
+          "id": "-6t-7uDP1mrB",
+          "name": "Blog",
+          "type": "managed",
+          "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
+          "renderModuleFilePath": "plasmic/its_a_lisa_site/PlasmicBlog.tsx",
+          "importSpec": {
+            "modulePath": "../pages/blog.tsx"
+          },
+          "cssFilePath": "plasmic/its_a_lisa_site/PlasmicBlog.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/blog"
+        },
+        {
+          "id": "2p5hN_gOCR_C",
+          "name": "Projects",
+          "type": "managed",
+          "projectId": "tt6TsnGtggzVZCRW2FQ8Vk",
+          "renderModuleFilePath": "plasmic/its_a_lisa_site/PlasmicProjects.tsx",
+          "importSpec": {
+            "modulePath": "../pages/projects.tsx"
+          },
+          "cssFilePath": "plasmic/its_a_lisa_site/PlasmicProjects.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/projects"
         }
       ],
       "icons": [

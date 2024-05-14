@@ -399,6 +399,7 @@ function PlasmicLayoutHeader__RenderFunc(props: {
                   role={"img"}
                 />
               }
+              link={`/blog`}
               startIcon={
                 <ChecksvgIcon
                   className={classNames(projectcss.all, sty.svg__ybCnu)}
@@ -428,6 +429,7 @@ function PlasmicLayoutHeader__RenderFunc(props: {
                   role={"img"}
                 />
               }
+              link={`/projects`}
               startIcon={
                 <ChecksvgIcon
                   className={classNames(projectcss.all, sty.svg__fVOq1)}
@@ -457,6 +459,7 @@ function PlasmicLayoutHeader__RenderFunc(props: {
                   role={"img"}
                 />
               }
+              link={`/resources`}
               startIcon={
                 <ChecksvgIcon
                   className={classNames(projectcss.all, sty.svg__hF2R)}
